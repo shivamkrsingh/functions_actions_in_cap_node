@@ -1,0 +1,15 @@
+{
+  "name": "order-management-cap",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sap/cds": "^9",
+    "sqlite": "^5.1.1"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true
+}

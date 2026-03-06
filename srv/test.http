@@ -1,0 +1,27 @@
+### call a unbound function
+http://localhost:4004/order/getOrderAmount(orderId='6fa459ea-ee8a-3ca4-894e-db77e160355e')
+
+### call a action which is not bound to entity
+POST http://localhost:4004/order/upDateOrderUnbound
+Content-Type: application/json
+
+{   
+    "orderId": "6fa459ea-ee8a-3ca4-894e-db77e160355e",
+    "status": "changed by event",
+    "amountr": 1000.1
+}
+
+### call with bound action
+POST http://localhost:4004/order/Orders(f47ac10b-58cc-4372-a567-0e02b2c3d479)/upDateOrder
+Content-Type: application/json
+
+{
+    "status": "updated via bound 1 function",
+    "amount": 1.1
+}
+
+### read the same updated record 
+http://localhost:4004/order/Orders/f47ac10b-58cc-4372-a567-0e02b2c3d479
+
+### call a bound function
+http://localhost:4004/order/Orders(6fa459ea-ee8a-3ca4-894e-db77e160355e)/getOrderAmountBOUND
